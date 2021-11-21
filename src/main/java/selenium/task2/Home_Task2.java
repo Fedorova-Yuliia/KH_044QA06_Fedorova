@@ -16,7 +16,7 @@ public class Home_Task2 {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().window().maximize();
         driver.get("https://google.com");
-        WebElement input = driver.findElement(By.xpath("//input[@aria-label=\"Найти\"]"));
+        WebElement input = driver.findElement(By.xpath("//input[@name=\"q\"]"));
 
         input.sendKeys("rozetka.com.ua");
         input.sendKeys(Keys.ENTER);
@@ -33,7 +33,7 @@ public class Home_Task2 {
         firstProduct.click();
 
         Thread.sleep(5000);
-        WebElement buyButton = driver.findElement(By.xpath("//button[@aria-label=\"Купить\"]"));
+        WebElement buyButton = driver.findElement(By.cssSelector("button.buy-button.button"));
 
         Actions actions = new Actions(driver);
         actions.moveToElement(buyButton);
